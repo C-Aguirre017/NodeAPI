@@ -1,4 +1,4 @@
-require("./configuration/development");
+require('./configuration/development');
 
 var express = require('express'),
     app = express(),
@@ -8,7 +8,7 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use(require('./controllers/index'));
+app.use('/api',require('./routes/index'));
 
 app.listen(port, function() {
   console.log('Listening on port ' + port);

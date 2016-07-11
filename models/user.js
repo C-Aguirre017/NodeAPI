@@ -23,7 +23,19 @@ var userSchema = new Schema({
       unique: true,
       sparse: true
     }
-  }
+  },
+  created_at: Date,
+  updated_at: Date
+});
+
+userSchema.pre('save', function(next) {
+  var currentDate = new Date();
+  this.updated_at = currentDate;
+
+  if (!this.created_at)
+    this.created_at = currentDate;
+
+  next();
 });
 
 module.exports = db.model('User', userSchema);
