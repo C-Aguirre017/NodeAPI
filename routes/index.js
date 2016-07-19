@@ -3,6 +3,7 @@ var router = express.Router();
 
 // Call different Routes
 router.get('/',function(req,res){
+    //res.render('index');
     res.json({'error' : false, 'message' : 'Welcome'});
 });
 
