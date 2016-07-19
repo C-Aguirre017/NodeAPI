@@ -2,8 +2,8 @@ require('./configuration/production');
 
 var express = require('express'),
     app = express(),
-    bodyParser = require('body-parser'),
-    port = 8000 ;
+    bodyParser = require('body-parser');
+var port = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
