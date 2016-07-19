@@ -1,4 +1,4 @@
-require('./configuration/development');
+require('./configuration/production');
 
 var express = require('express'),
     app = express(),
